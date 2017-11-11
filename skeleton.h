@@ -1,7 +1,7 @@
 
 #include <iostream>
-#include <fstream> 
-#include <sstream> 
+#include <fstream>
+#include <sstream>
 #include <string>
 #include <vector>
 #include <cmath>
@@ -46,7 +46,7 @@ struct joint
 	vector<string> channelNames;
 
 	// constructor
-	joint(string nm, jointType tp) 
+	joint(string nm, jointType tp)
 	{
 		name = nm;
 		type = tp;

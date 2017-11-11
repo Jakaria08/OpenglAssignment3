@@ -27,23 +27,41 @@ void mesh::readObjFile(char* fileName)
 			stin >> v[0] >> v[1] >> v[2];
 			vertices.push_back(v);
 
-		} else if (token == "f") {
+		}else if(token == "vt"){
+            Vector2f vt;
+            stin >> vt[0] >> vt[1];
+            Textures.push_back(vt);
+
+		}else if(token == "vn"){
+            Vector3f vn;
+            stin >> vn[0] >> vn[1] >> vn[2];
+            Normals.push_back(vn);
+
+		}else if (token == "f") {
 			vector<unsigned int> faceV;
+			vector<unsigned int> faceT;
+			vector<unsigned int> faceN;
 			unsigned int i;
 			while (stin >> i) {
-				faceV.push_back(i-1);
+				faceV.push_back(i-1); // for 0 indexing
 				// temporarily ignoring texture/normal vertices; parsing over them
 				if (stin.get() == '/') {
-					if (stin.peek() == '/') {
-						stin.get();
+					//if (stin.peek() == '/') {
+						//stin.get();
 						stin >> i;
-						continue;
+						//continue;
+					//}
+					faceT.push_back(i-1);
 					}
+
+                if (stin.get() == '/') {
 					stin >> i;
-					if (stin.get() == '/') stin >> i;
+					faceN.push_back(i-1);
 				}
 			}
 			faceVertices.push_back(faceV);
+            faceTextures.push_back(faceT);
+            faceNormals.push_back(faceN);
 		}
 	}
 	infile.close();
@@ -60,10 +78,17 @@ void mesh::writeObjFile(char* fileName)
 	for (unsigned int i = 0; i < vertices.size(); ++i)
 		outfile << "v " << vertices[i][0] << " " << vertices[i][1]
 						<< " " << vertices[i][2] << endl;
+    for (unsigned int i = 0; i < Textures.size(); ++i)
+		outfile << "vt " << Textures[i][0] << " " << Textures[i][1]
+						<< endl;
+    for (unsigned int i = 0; i < Normals.size(); ++i)
+		outfile << "vn " << Normals[i][0] << " " << Normals[i][1]
+						<< " " << Normals[i][2] << endl;
+
 	for (unsigned int i = 0; i < faceVertices.size(); ++i) {
 		outfile << "f ";
 		for (unsigned int j = 0; j < faceVertices[i].size(); ++j) {
-			outfile << faceVertices[i][j] + 1;
+			outfile << faceVertices[i][j] + 1 << "/" << faceTextures[i][j] + 1 << "/" << faceNormals[i][j] + 1;
 			outfile << " ";
 		}
 		outfile << endl;
@@ -99,7 +124,7 @@ void mesh::glCreateDisplayList()
 			glBegin(GL_TRIANGLE_FAN);
 				for (unsigned int j = 0; j < faceVertices[f].size(); ++j) {
 					unsigned int v(faceVertices[f][j]);
-					glVertex3fv(vertices[v].data()); 
+					glVertex3fv(vertices[v].data());
 				}
 			glEnd();
 		}

@@ -28,7 +28,11 @@ using namespace Eigen;
 struct mesh
 {
 	vector<Vector3f> vertices;
+	vector<Vector3f> Normals;
+	vector<Vector2f> Textures;
 	vector< vector<unsigned int> > faceVertices;
+    vector< vector<unsigned int> > faceNormals;
+    vector< vector<unsigned int> > faceTextures;
 
 	// properties
 	float meshScale; // object scale divisor
