@@ -73,7 +73,7 @@ void setup(char* fileName)
     // Local storage for bmp image data.
     BitMapFile *image[1];
     // Load the image.
-    image[0] = tex.getbmp("skin.bmp");
+    image[0] = tex.getbmp("./a3files/mesh/skin.bmp");
     tex.loadExternalTextures(image[0]);
     glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
 
@@ -154,7 +154,7 @@ void keyInput(unsigned char key, int x, int y)
         exit(0);
         break; // quit
     case 'w':
-        obj.writeObjFile("meshout.obj");
+        obj.writeObjFile("../../Textures/launch.bmp");
         break;
     case 'n':
         obj.zTransl(-0.1);
