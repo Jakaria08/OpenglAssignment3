@@ -124,7 +124,13 @@ void mesh::glCreateDisplayList()
 			glBegin(GL_TRIANGLE_FAN);
 				for (unsigned int j = 0; j < faceVertices[f].size(); ++j) {
 					unsigned int v(faceVertices[f][j]);
+					unsigned int t(faceTextures[f][j]);
+					unsigned int n(faceNormals[f][j]);
+					glNormal3fv(Normals[n].data());
+					glTexCoord2fv(Textures[t].data());
 					glVertex3fv(vertices[v].data());
+
+
 				}
 			glEnd();
 		}

@@ -46,15 +46,15 @@ int main(int argc, char** argv)
 	glutSpecialFunc(specialKeyInput);
 #ifndef __APPLE__
 	glewExperimental = GL_TRUE;
-	glewInit(); 
+	glewInit();
 #endif
 	if (argc != 2) {
 		cerr << "Usage: modelViewer <meshfile.obj>" << endl;
 		exit(1);
 	}
-	setup(argv[1]); 
-	glutMainLoop(); 
-	return 0;  
+	setup(argv[1]);
+	glutMainLoop();
+	return 0;
 }
 
 
@@ -109,10 +109,10 @@ void resize(int w, int h)
 
 void keyInput(unsigned char key, int x, int y)
 {
-	switch(key) 
+	switch(key)
 	{
 		case 'q': exit(0);            break; // quit
-		case 'w': obj.writeObjFile("output.obj"); break;
+		case 'w': obj.writeObjFile("meshout.obj"); break;
 		case 'n': obj.zTransl(-0.1);  break;
 		case 'N': obj.zTransl(0.1);   break;
 		case 'p': obj.xRotate(-10.0); break;
@@ -138,7 +138,7 @@ void keyInput(unsigned char key, int x, int y)
 
 void specialKeyInput(int key, int x, int y)
 {
-	switch(key) 
+	switch(key)
 	{
 		case GLUT_KEY_LEFT:  obj.xTransl(-0.1); break;
 		case GLUT_KEY_RIGHT: obj.xTransl(0.1);  break;

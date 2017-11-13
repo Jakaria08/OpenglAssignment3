@@ -32,7 +32,33 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="main.cpp" />
+		<Unit filename="Makefile" />
+		<Unit filename="README" />
+		<Unit filename="W.out" />
+		<Unit filename="attachGenerator" />
+		<Unit filename="attachGenerator.cpp" />
+		<Unit filename="attachment.cpp" />
+		<Unit filename="attachment.h" />
+		<Unit filename="attachmentViewer" />
+		<Unit filename="attachmentViewer.cpp" />
+		<Unit filename="bvh_util.cpp" />
+		<Unit filename="bvh_util.h" />
+		<Unit filename="camera.h" />
+		<Unit filename="light.h" />
+		<Unit filename="mesh.cpp" />
+		<Unit filename="mesh.h" />
+		<Unit filename="modelSolidViewer.cpp" />
+		<Unit filename="modelViewer" />
+		<Unit filename="modelViewer.cpp" />
+		<Unit filename="motion.cpp" />
+		<Unit filename="motion.h" />
+		<Unit filename="motionViewer" />
+		<Unit filename="motionViewer.cpp" />
+		<Unit filename="skeleton.cpp" />
+		<Unit filename="skeleton.h" />
+		<Unit filename="texture.cpp" />
+		<Unit filename="texture.h" />
+		<Unit filename="timer.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

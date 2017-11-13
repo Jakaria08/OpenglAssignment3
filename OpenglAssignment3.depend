@@ -1,0 +1,74 @@
+# depslib dependency file v1.0
+1510431898 source:/home/jakaria/OpenglAssignment3/OpenglAssignment3/attachGenerator.cpp
+	<iostream>
+	<eigen3/Eigen/Dense>
+	"mesh.h"
+	"skeleton.h"
+	"attachment.h"
+
+1510431957 /home/jakaria/OpenglAssignment3/OpenglAssignment3/mesh.h
+	<iostream>
+	<fstream>
+	<sstream>
+	<string>
+	<cfloat>
+	<cmath>
+	<vector>
+	<eigen3/Eigen/Dense>
+	<GL/glew.h>
+	<GL/freeglut.h>
+
+1510431925 /home/jakaria/OpenglAssignment3/OpenglAssignment3/skeleton.h
+	<iostream>
+	<fstream>
+	<sstream>
+	<string>
+	<vector>
+	<cmath>
+	<eigen3/Eigen/Dense>
+	<GL/glew.h>
+	<GL/freeglut.h>
+	"bvh_util.h"
+	"motion.h"
+	"timer.h"
+
+1508366516 /home/jakaria/OpenglAssignment3/OpenglAssignment3/bvh_util.h
+	<iostream>
+	<fstream>
+	<sstream>
+	<string>
+	<cstdlib>
+
+1510431932 /home/jakaria/OpenglAssignment3/OpenglAssignment3/motion.h
+	<iostream>
+	<fstream>
+	<sstream>
+	<string>
+	<vector>
+	<cfloat>
+	<eigen3/Eigen/Dense>
+	"bvh_util.h"
+
+1508366516 /home/jakaria/OpenglAssignment3/OpenglAssignment3/timer.h
+	<GL/glew.h>
+	<GL/freeglut.h>
+
+1510431948 /home/jakaria/OpenglAssignment3/OpenglAssignment3/attachment.h
+	<iostream>
+	<fstream>
+	<sstream>
+	<string>
+	<cfloat>
+	<climits>
+	<cmath>
+	<vector>
+	<eigen3/Eigen/Dense>
+	<eigen3/Eigen/Sparse>
+	<GL/glew.h>
+	<GL/freeglut.h>
+	"mesh.h"
+	"skeleton.h"
+
+1508366516 source:/home/jakaria/OpenglAssignment3/OpenglAssignment3/attachment.cpp
+	"attachment.h"
+
