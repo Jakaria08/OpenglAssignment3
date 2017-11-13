@@ -10,7 +10,7 @@
 #define DEG2RAD_CAM 0.017453292519943 /* rad = deg*PI/180 = deg*DEG2RAD */
 #define RAD2DEG_CAM 57.29577951308232 /* deg = rad*180/PI = rad*RAD2DEG */
 #define MOVE_SPEED 0.1
-#define ROTATE_SPEED 1.0
+#define ROTATE_SPEED 10.0
 
 using namespace std;
 using namespace Eigen;
@@ -123,18 +123,18 @@ struct camera
 		{
 			case 'v': type = ortho;           break; // toggle camera type
 			case 'V': type = persp;           break;
-			case 'd': xTransl( MOVE_SPEED);   break;
-			case 'D': xTransl(-MOVE_SPEED);   break;
-			case 'c': yTransl( MOVE_SPEED);   break;
-			case 'C': yTransl(-MOVE_SPEED);   break;
-			case 'z': zTransl( MOVE_SPEED);   break;
-			case 'Z': zTransl(-MOVE_SPEED);   break;
-			case 't': xRotate( ROTATE_SPEED); break;
-			case 'T': xRotate(-ROTATE_SPEED); break;
-			case 'a': yRotate( ROTATE_SPEED); break;
-			case 'A': yRotate(-ROTATE_SPEED); break;
-			case 'l': zRotate( ROTATE_SPEED); break;
-			case 'L': zRotate(-ROTATE_SPEED); break;
+			case 'd': xTransl(-MOVE_SPEED);   break;
+			case 'D': xTransl( MOVE_SPEED);   break;
+			case 'c': yTransl(-MOVE_SPEED);   break;
+			case 'C': yTransl( MOVE_SPEED);   break;
+			case 'z': zTransl(-MOVE_SPEED);   break;
+			case 'Z': zTransl( MOVE_SPEED);   break;
+			case 't': xRotate(-ROTATE_SPEED); break;
+			case 'T': xRotate( ROTATE_SPEED); break;
+			case 'a': yRotate(-ROTATE_SPEED); break;
+			case 'A': yRotate( ROTATE_SPEED); break;
+			case 'l': zRotate(-ROTATE_SPEED); break;
+			case 'L': zRotate( ROTATE_SPEED); break;
 		}
 	}
 

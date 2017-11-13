@@ -83,7 +83,7 @@ struct skeleton
 	// constructor
 	skeleton()
 	{
-		color[1] = color[2] = 0.0;
+		color[1] = color[2] = 1.0;
 		color[0] = color[3] = 1.0;
 		vertexArray = NULL;
 		numVertices = 0;
